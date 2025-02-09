@@ -7,14 +7,14 @@ For each CID, the script retrieves the corresponding compound information from P
 
 The script requires the following dependencies:
 
-    requests
-    pubchempy
-    csv
-    os
+ requests
+ pubchempy
+ csv
+ os
 
 These dependencies can be installed via pip:
 
-pip install requests pubchempy
+    pip install requests pubchempy
 
 # Usage
 
@@ -22,7 +22,11 @@ To use the script, place your input CSV file (e.g., data.csv) containing a colum
 
 Run the script as follows:
 
-python cidtosmilescsv3D.py
+    python cid_to_smiles_csv_3D.py
+or 
+    python cid_to_smiles_csv.py
+or 
+    python cid_to_smiles_txt.py
 
 # Input CSV Format
 
@@ -37,29 +41,26 @@ cid,name
 # Functionality
 
 The script performs the following tasks:
-
-    Loads data from the CSV file into a list of dictionaries.
-    For each CID in the CSV, the script:
-        Retrieves the compound data from PubChem.
-        Downloads the 2D/3D structure (SDF file) of the compound.
-        Extracts the isomeric SMILES of the compound.
-    Appends the isomeric SMILES to the CSV file and saves the SDF file in the 3D_structures directory.
+- Loads data from the CSV file into a list of dictionaries.
+- For each CID in the CSV, the script:
+  - Retrieves the compound data from PubChem.
+  - Downloads the 2D/3D structure (SDF file) of the compound.
+  - Extracts the isomeric SMILES of the compound.
+- Appends the isomeric SMILES to the CSV file and saves the SDF file in the 3D_structures directory.
 
 # Error Handling
 
 The script includes error handling to manage the following cases:
-
-    If a compound's CID is missing or invalid, it is skipped.
-    If fetching the 3D structure from PubChem fails (due to an incorrect CID or network issues), an error message is printed, and the script continues processing other compounds.
-    If there is an issue with saving the SDF file, an error message is printed, and the script proceeds with the next compound.
-    If a CID is repeated, it will be ignored.
+- If a compound's CID is missing or invalid, it is skipped.
+- If fetching the 3D structure from PubChem fails (due to an incorrect CID or network issues), an error message is printed, and the script continues processing other compounds.
+- If there is an issue with saving the SDF file, an error message is printed, and the script proceeds with the next compound.
+- If a CID is repeated, it will be ignored.
 
 # Directory Structure
 
 After running the script, the directory will contain:
-
-    data.csv: The updated CSV file with the added isomeric_smiles column.
-    3D_structures/: A folder where the SDF files of compounds are saved.
+- data.csv: The updated CSV file with the added isomeric_smiles column.
+- 3D_structures/: A folder where the SDF files of compounds are saved.
 
 # License
 
