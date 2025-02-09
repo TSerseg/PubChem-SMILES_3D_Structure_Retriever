@@ -23,9 +23,13 @@ To use the script, place your input CSV file (e.g., data.csv) containing a colum
 Run the script as follows:
 
     python cid_to_smiles_csv_3D.py
+
 or 
+
     python cid_to_smiles_csv.py
+
 or 
+
     python cid_to_smiles_txt.py
 
 # Input CSV Format
@@ -34,9 +38,9 @@ The input CSV should have a column named cid containing the PubChem Compound IDs
 
 Example of the CSV format:
 
-cid,name
-12345,Compound A
-67890,Compound B
+    cid,name
+    12345,Compound A
+    67890,Compound B
 
 # Functionality
 
